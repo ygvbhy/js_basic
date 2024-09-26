@@ -95,3 +95,30 @@ function func1() {
   // not found
 }
 func1();
+
+console.clear();
+
+// 3강 호이스팅
+console.log(test3); // undefined
+var test3 = "hello";
+// 선언 단계와 할당 단계로 분할한다.
+// 인터프리터가 분석을 함. 위에서부터 순차적으로
+// 하지만 호이스팅으로 변수를 먼저 할당한 뒤 undefined 를 할당 함
+// 이후 할당 라인으로 오면 선언된 hello 할당 함
+
+// 함수는 hoisting 되어 제일 먼저 선언 됨
+func3();
+function func3() {
+  console.log("hoisting Test");
+}
+
+// console.log(test4); // Uncaught ReferenceError: Cannot access 'test4' before initialization
+// 초기화 전에는 test4 에 접근할 수 없다.
+// let test4 = "hello";
+// 여전히 호이스팅이 되지만 아무런 값도 할당 되지 않는다. undefined 도 안함.
+// TDZ(Temporal Dead Zone) 이라 부름.
+
+// 결론
+// var 사용 안함.
+// 변수를 생성할 때 재할당이 필요없다면 const 사용 하면 됨.
+// 재할당이 필요하면 let 으로 선언
