@@ -235,3 +235,30 @@ const sum1 = val3 + val4;
 console.log(sum1);
 console.log(typeof sum1);
 console.clear();
+
+// 6강 자바스크립트 연산 및 Math Object
+const n1 = 20;
+const n2 = 10;
+
+let cal;
+// 간단한 연산
+cal = n1 + n2; // 30
+cal = n1 - n2; // 10
+cal = n1 * n2; // 200
+cal = n1 / n2; // 2
+cal = n1 % n2; // 0 - n2 를 n1 에 나눴을때의 나머지
+
+// Math Object
+cal = Math.E;
+cal = Math.PI;
+cal = Math.round(2.4); // 2
+cal = Math.ceil(2.4); // 3
+cal = Math.floor(2.8); // 2
+cal = Math.abs(-5); // 5 = 절대값
+cal = Math.min(2, 3, 4, 5, 6, 7, 8, -1); // -1
+cal = Math.max(2, 3, 4, 5, 6, 7, 8, -1); // 8
+cal = Math.random(); // 0 ~ 1 사이의 숫자 반환
+cal = Math.floor(Math.random() * 20 + 1); // 1 ~ 20 까지 랜덤
+
+console.log(cal);
+console.clear();
