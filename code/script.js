@@ -112,6 +112,8 @@ function func3() {
   console.log("hoisting Test");
 }
 
+console.clear();
+
 // console.log(test4); // Uncaught ReferenceError: Cannot access 'test4' before initialization
 // 초기화 전에는 test4 에 접근할 수 없다.
 // let test4 = "hello";
@@ -122,3 +124,44 @@ function func3() {
 // var 사용 안함.
 // 변수를 생성할 때 재할당이 필요없다면 const 사용 하면 됨.
 // 재할당이 필요하면 let 으로 선언
+
+// 4강 js 타입
+// 원시 타입
+// boolean, string, number, null, undefined, Sysbol (불변성을 가지고 있다.)
+// 참조 타입
+// Object, Array
+// 자바스크립트는 느슨한 타입의 동적 언어.
+// 특정 타입과 연결되지 않으며, 모든 타입으로 할당 및 재할당 가능
+// 이걸 막기 위해 TS 를 사용함
+// ex)
+let foo = 1;
+console.log(typeof foo); // type Number
+foo = "string";
+console.log(typeof foo); // type String
+foo = true;
+console.log(typeof foo); // type Boolean
+
+// 원시 타입
+// String
+const anem = "han";
+// number
+const age = 30;
+// Boolean
+const hasJob = true;
+// null
+const car = null;
+// undefined
+let anything;
+// Symbol
+const sym = Symbol();
+
+// 첨조 타입
+// Array 배열 - 배열도 typeof 로 하면 object 로 나오기 때문에
+// Array.isArray() 로 해야 함
+const hobbies = ["wakjubg", "books"];
+// Object 객체
+const address = {
+  province: "경기도",
+  city: "성남시",
+};
+console.clear();
