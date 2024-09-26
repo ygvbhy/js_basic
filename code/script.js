@@ -65,3 +65,33 @@ console.log(greeting2);
 // console.log(greeting2);
 // const 로 선언 된 변수 이므로 재할당시 오류 출력
 // Uncaught TypeError: Assignment to constant variable.
+
+// 3깅 변수의 참조 범위(scope)
+
+// 유효한 참조 범위
+// var => 함수 레벨 스코프
+function func() {
+  if (true) {
+    var a = "a";
+    console.log(a);
+  }
+  console.log(a);
+}
+// console.log(a);
+// not found
+func();
+
+// let, const => 블록 레벨 스코프
+function func1() {
+  if (true) {
+    let b = "b";
+    const c = "c";
+    console.log(b);
+    console.log(c);
+  }
+  // console.log(b);
+  // not found
+  // console.log(c);
+  // not found
+}
+func1();
