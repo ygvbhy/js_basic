@@ -165,3 +165,73 @@ const address = {
   city: "성남시",
 };
 console.clear();
+
+// 5강 js 타입 변환
+// 1. Js 함수로 변환
+// 2. Js 자체에 의해 변환
+
+// Converting Strings to Numbers
+// Converting Numbers to Strings
+// Converting Dates to Numbers
+// Converting Numbers to Dates
+// Converting Booleans to Numbers
+// Converting Numbers to Booleans
+
+// 함수를 사용해서
+let val;
+val = 123;
+// number to string
+val = String(123);
+val = val + "";
+
+// boolean to string
+val = false;
+val = String(val);
+val = val + "";
+
+// Date to String
+val = new Date();
+val = String(val);
+
+// Array to String
+val = [1, 2, 3, 4, 5];
+val = String(val);
+
+// toString()
+val = 123;
+val = val.toString();
+
+// String to number
+val = "123";
+val = Number(val);
+val = +val;
+val = Number(true);
+val = Number(false);
+val = Number(null);
+val = Number([1, 2, 3]);
+// NaN = Not a Number
+
+val = "111.40";
+// 소수점 유지
+val = parseFloat(val);
+// 소수점 제거
+val = parseInt(val);
+
+console.log(val);
+console.log(typeof val);
+
+const val1 = 2;
+const val2 = 3;
+const sum = val1 + val2;
+
+console.log(sum);
+console.log(typeof sum);
+
+// 문자열 + 숫자 면 그냥 문자열을 이어 붙인 값으로 출력 됨
+const val3 = String(2);
+const val4 = 3;
+const sum1 = val3 + val4;
+
+console.log(sum1);
+console.log(typeof sum1);
+console.clear();
