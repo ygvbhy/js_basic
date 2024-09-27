@@ -270,3 +270,53 @@ const a = 5;
 const b = 10;
 console.log(`Fifteen is ${a + b} and not ${2 * a + b}`);
 console.clear();
+
+// 8강 Loops
+// for 문
+for (let i = 0; i < 10; i++) {
+  if (i === 3) {
+    console.log("It is 3");
+    continue;
+  }
+
+  if (i === 5) {
+    console.log("5 Stop the loop");
+    break;
+  }
+  console.log(`Number is ${i}`);
+}
+console.clear();
+
+const user = {
+  name: "Han",
+  province: "경기도",
+  city: "성남시",
+};
+
+// for / in
+for (let key in user) {
+  console.log(`${key}: ${user[key]}`);
+}
+console.clear();
+
+// while
+let i = 0;
+
+while (i < 10) {
+  console.log(`Number: ${i}`);
+  i++;
+}
+console.clear();
+
+// do / while
+let j = 100;
+
+do {
+  console.log(`Number: ${j}`);
+  j++;
+} while (j < 10);
+console.clear();
+
+// foreach 는 배열 요소를 반복하는 새로운 접근 방법
+// for 는 await 와 함께 작동하지만 forEach 는 작동하지 않음 -> 동기비동기
+// for 루프가 forEach 보다 성능이 빠름
