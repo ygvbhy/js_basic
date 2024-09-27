@@ -262,3 +262,11 @@ cal = Math.floor(Math.random() * 20 + 1); // 1 ~ 20 까지 랜덤
 
 console.log(cal);
 console.clear();
+
+// 7강 Template Literals
+// `` 백틱 문자를 사용하여 문자열을 표현한 것을 템플릿 리터럴이라고 한다.
+// 줄바꿈 가능, 문자열 내부에 표현식을 포함할 수 있게 됨
+const a = 5;
+const b = 10;
+console.log(`Fifteen is ${a + b} and not ${2 * a + b}`);
+console.clear();
