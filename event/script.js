@@ -32,3 +32,42 @@ buttonElement.addEventListener("click", (e) => {
   val = e.offsetY;
   console.log(val);
 });
+
+const submitBtn = document.querySelector(".submit-btn");
+const form = document.querySelector("#formId");
+const title = document.querySelector(".h2");
+
+// Click Event
+const handleEvent = (e) => {
+  e.preventDefault();
+  console.log(`Event Type: ${e.type}`);
+  title.textContent = `MouseX: ${e.offsetX}, MouseY: ${e.offsetY}`;
+};
+submitBtn.addEventListener("click", handleEvent);
+submitBtn.addEventListener("dblclick", handleEvent);
+submitBtn.addEventListener("mousedown", handleEvent);
+submitBtn.addEventListener("mouseup", handleEvent);
+submitBtn.addEventListener("mouseenter", handleEvent);
+submitBtn.addEventListener("mouseleave", handleEvent);
+submitBtn.addEventListener("mousemove", handleEvent);
+
+// Form Event
+const emailInput = document.getElementById("email");
+
+const handleSubmitEvent = (e) => {
+  if (e.type === "submit") {
+    e.preventDefault();
+  }
+  console.log(`Event Type: ${e.type}`);
+  title.textContent = e.target.value;
+};
+
+emailInput.addEventListener("keydown", handleSubmitEvent);
+emailInput.addEventListener("keyup", handleSubmitEvent);
+emailInput.addEventListener("keypress", handleSubmitEvent);
+emailInput.addEventListener("focus", handleSubmitEvent);
+emailInput.addEventListener("blur", handleSubmitEvent);
+emailInput.addEventListener("cut", handleSubmitEvent);
+emailInput.addEventListener("paste", handleSubmitEvent);
+emailInput.addEventListener("input", handleSubmitEvent);
+form.addEventListener("submit", handleSubmitEvent);
