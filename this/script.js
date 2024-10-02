@@ -1,65 +1,63 @@
-// method => oobject
-const audio = {
-  title: "a",
-  play() {
-    console.log("play this", this);
-  },
-};
+(function () {
+  let aName = "Barry";
+})();
+// IIFE 내부에서 정의된 변수는 외부 범위에서 접근이 불가.
+// console.log(aName); // aName is not defined
 
-audio.play();
+var result = (function () {
+  var name = "Barry";
+  return name;
+})();
 
-audio.stop = function () {
-  console.log("stop this", this);
-};
-
-audio.stop();
+console.log(result); // Barry
 console.clear();
 
-// Function => Window object
-function palyAudio() {
-  console.log(this);
-}
-
-palyAudio();
-console.clear();
-
-// Constructor Function => {}
-function AudioFunction(title) {
-  this.title = title;
-  console.log(this);
-}
-
-const a = new AudioFunction("audio");
-console.clear();
-
-const radio = {
-  title: "radio",
-  categories: ["rock", "pop", "music"],
-  displayCategories() {
-    this.categories.forEach(
-      // this 의 내부 함수 이므로 위에서 봤던 Function 에서의 this 는 window object 를 참조 하므로
-      // this.title 값은 없음
-      // 그래서 다음 값으로 사용하려는 object 를 같이 넘겨주면 this 가 해당 값을 참조 하여 데이터 활용 가능 또는 this 를 입력하면 상위 값을 참조함
-      function (category) {
-        console.log(`title: ${this.title}, category: ${category} `);
-      },
-      this
-    );
-  },
+const score = () => {
+  let count = 0;
+  return {
+    current: () => count,
+    increment: () => count++,
+    reset: () => (count = 0),
+  };
 };
 
-radio.displayCategories();
+console.log(typeof score);
+console.log(score);
+console.log(score().current());
+score().increment();
+console.log(score().current());
 console.clear();
 
-const radio1 = {
-  title: "radio",
-  categories: ["rock", "pop", "music"],
-  displayCategories() {
-    // Arrow Function 은 항상 상위 스코프의 this 를 참조함
-    // Lexical this
-    this.categories.forEach((category) => {
-      console.log(`title: ${this.title}, category: ${category} `);
-    });
-  },
-};
-radio1.displayCategories();
+const score1 = (() => {
+  let count = 0;
+  return {
+    current: () => count,
+    increment: () => count++,
+    reset: () => (count = 0),
+  };
+})();
+console.log(typeof score1);
+console.log(score1);
+console.log(score1.current());
+score1.increment();
+console.log(score1.current());
+score1.reset();
+console.log(score1.current());
+console.clear();
+
+const increment = (() => {
+  let counter = 0;
+  console.log(counter);
+  const number = (num) => console.log(`it is ${num} number`);
+  return () => {
+    counter++;
+    number(counter);
+  };
+})();
+
+console.log(increment);
+increment();
+increment();
+increment();
+increment();
+increment();
