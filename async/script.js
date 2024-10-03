@@ -19,3 +19,15 @@ fetch("http://jsonplaceholder.typicode.com/todos/1")
   .then((json) => console.log(json))
   .catch((error) => console.log(error))
   .finally(() => console.log("작업 끝!"));
+
+async function makeRequest() {
+  try {
+    const res1 = await fetch("http://jsonplaceholder.typicode.com/todos/1");
+    const json = await res1.json();
+    console.log(json);
+  } catch (error) {
+  } finally {
+    console.log("모든 작업 끝");
+  }
+}
+makeRequest();
